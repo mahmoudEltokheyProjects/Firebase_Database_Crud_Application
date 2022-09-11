@@ -1,0 +1,158 @@
+/* ============================ Global Style ================================= */
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body 
+{
+    font-family: cursive;
+}
+/* +++++++++++++++++++++++++++++++++ wrapper ++++++++++++++++++++++++++++++++++ */
+.wrapper
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column ;
+    min-height: 100vh;
+    background-color: #fff;
+    /* border: 2px solid #f00;  */
+}
+/* +++++++++++++++++++++++++++++++ wrapper : Crud ++++++++++++++++++++++++++++++ */
+.wrapper   #crud 
+{
+    width: 90% ;
+    text-align: center; 
+    /* border: 2px solid #ff0;  */
+}
+/* +++++++++++++++++++++++++++++++ wrapper : Crud ++++++++++++++++++++++++++++++ */
+.wrapper   #crud   caption
+{
+    background-color: #009688;
+    color: #fff;
+    padding: 10px 0 ;
+    font-size: 1.5rem;
+}
+/* +++++++++++++++++++++++++++++++ wrapper : Crud : table header ++++++++++++++++++++++++++++++ */
+.wrapper   #crud   thead
+{
+    background-color: aliceblue;
+}
+/* +++++++++++++++++++++++++++++++ wrapper : Crud : table header : td ++++++++++++++++++++++++++++++ */
+.wrapper   #crud   thead    tr  td
+{
+    padding: 10px;
+    color: #009688;
+    text-transform: capitalize;
+}
+/* +++++++++++++++++++++++++++++++ wrapper : Crud : table body : td ++++++++++++++++++++++++++++++ */
+.wrapper  #crud  tbody  tr  td
+{
+    padding: 10px;
+    border-bottom: 1px solid #009688;
+    color: #666565;
+}
+/* +++++++++++++++++++++++++++++++ wrapper : Crud : table body : "edit" , "delete"  button ++++++++++++++++++++++++++++++ */
+/* ============================== "add-user" button ============================== */
+.wrapper  #crud  tbody  tr  td  button 
+{
+    padding: 5px 7px;
+    border: none ;
+    border-radius: 3px ;
+    cursor: pointer;
+    background-color: transparent;
+    color: #fff ;
+}
+/* ============================== "edit" button ============================== */
+.wrapper  #crud  tbody  td  button.edit
+{
+    background-color:#009688;
+}
+/* ============================== "delete" button ============================== */
+.wrapper   #crud   tbody  td button.delete
+{
+    background-color: #e91e63;
+}
+/* ============================== "add-user" button ============================== */
+.wrapper    .add-user
+{   
+    background-color: #009688;
+    margin-top: 20px ;
+    font-size: 18px;
+    padding: 10px 20px ; 
+    border: none ;
+    border-radius: 3px ;
+    cursor: pointer;
+    color: #fff;
+    font-family: cursive;
+}   
+/* ============================== "Pop-up" Form Container ============================== */
+.popup
+{
+    /* hide the "popup form" and appear it when click on "add-user" button */
+    display: none;  
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    inset: 0px ; 
+    /* to put "popup form" in the "center" of page */
+    place-items: center;
+}
+/* close icon */
+.closeIcon
+{
+    position: absolute;
+    top: 30px ;
+    right: 30px ;   
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+/* ============================== "Pop-up" Form ============================== */
+.popup   form
+{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    max-width: 350px;
+    width: 100%;
+    padding: 50px 20px;
+    /* border: 2px solid #ff0;  */
+}
+/* ============================== "Pop-up" Form : <input> ============================== */
+.popup   form    input
+{
+    width: 100% ;
+    border: 0 ;
+    background-color: transparent;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4);
+    margin: 15px 0px;
+    padding: 12px 15px ;
+    font-size: 1.1rem;
+    font-family: cursive;
+}
+/* active عن طريق اضافة كلاس popup هيظهر لي ال "add-user" عشان لما اضغط علي زرار ال */
+.popup.active
+{
+    display: grid ;
+    animation: show 0.7s ease-in-out;
+}
+@keyframes show
+{
+    0%
+    {
+        transform: translateY(-100%);
+    }
+    100%
+    {
+        transform: translateY(0%);
+    }
+}
+.popup form input[type = "submit"]
+{
+    background-color: #009688;
+    color: #fff;
+    cursor: pointer;
+    max-width: 100px;
+}

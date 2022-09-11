@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Firebase_Realtime_Database_Web_Crud_Operation_Web_Application</title>
+    <!-- Fontawesome file -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <!-- css style file -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- +++++++++++++++++ Table ++++++++++++++++++ -->
+      <table id="crud">
+        <!-- Table Caption -->
+        <caption>
+          Users
+        </caption>
+        <!-- Table Header -->
+        <thead>
+          <tr>
+            <td>name</td>
+            <td>phone</td>
+            <td>email</td>
+            <td>action</td>
+          </tr>
+        </thead>
+        <!-- Table Body -->
+        <tbody>
+          <tr>
+            <td>mahmoud</td>
+            <td>1274792335</td>
+            <td>mahmoud@gmail.com</td>
+            <td>
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- ++++++++++++++++++ Add User Button ++++++++++++++++++ -->
+      <!-- when click on this "button" , "popUp form" will appear -->
+      <button class="add-user">Add User</button>
+    </div>
+    <!-- ============================== Pop-up Form : Add ============================== -->
+    <div class="popup add">
+      <form  action="">
+        <input type="text"   placeholder="name"   name="usernameInput"  />
+        <input type="tel"    placeholder="phone"  name="phoneInput" />
+        <input type="email"  placeholder="email"  name="emailInput" />
+        <input type="submit" value="submit" />
+      </form>
+    </div>
+    <!-- ============================ Pop-up Form : Update ============================== -->
+    <div class="popup update">
+      <form  action="">
+        <input type="text"   placeholder="name"   name="usernameInput"  />
+        <input type="tel"    placeholder="phone"  name="phoneInput" />
+        <input type="email"  placeholder="email"  name="emailInput" />
+        <input type="submit" value="submit" />
+      </form>
+    </div>
+    <!-- ++++++++++++++++++++++++++++++ Firebase Code ++++++++++++++++++++++++++++++ -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      import { getDatabase } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js"; 
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyATwIlRIroVznEY-hLIb7egVpehvvzb1x0",
+        authDomain: "crudoperation-e9637.firebaseapp.com",
+        databaseURL: "https://crudoperation-e9637-default-rtdb.firebaseio.com",
+        projectId: "crudoperation-e9637",
+        storageBucket: "crudoperation-e9637.appspot.com",
+        messagingSenderId: "294089661753",
+        appId: "1:294089661753:web:92e41a0e94e46248269ce8"
+      };
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      // Initialize Realtime Database and Get a reference to the service
+      const database = getDatabase(app);
+    </script>
+    <!-- ++++++++++++++++++++++++++++++ script file ++++++++++++++++++++++++++++++ -->
+    <script type="module" src="js/script.js"></script>
+  </body>
+</html>
+
+ 
